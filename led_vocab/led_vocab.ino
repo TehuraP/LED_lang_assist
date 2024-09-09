@@ -16,14 +16,12 @@
 const char *const eng[ARRAYSIZE] = { "airport", "why",  "noon", "difficult", "fruit", "other", "answer", "to travel", "to read", "funny",
          "assignment" , "Earth", "any", "condition", "solution","profession", "place" , "money", "beginning" , "yellow" ,
          "to get" , "to take", "train", "short", "airplane", "simple", "the same", "call" , "to be called", "tired", 
-         "sad", "finally" , "quietly", "to give" , "maybe", "cheap", "expensive", "window", "still", "always",
-         "where from", "key", "when", "who" , "a lot" , "exam", "right now", "outside", "to know" , "people"};
+         "sad", "finally" , "quietly", "to give" , "maybe", "cheap", "expensive", "window", "still", "always"};
 // German words array 
 const char *const deu[ARRAYSIZE] = { "der Flughafen", "warum",  "Mittag", "schwierig", "das Obst", "andere", "die Antwort",  "reisen", "lesen" , "lustig",
          "die Aufgabe", "die Erde", "jeder", "der Zustand", "die L^sung", "der Beruf" , "der Ort" , "das Geld" , "der Anfang" , "gelb",
          "erhalten", "nehmen", "der Zug", "kurz" ,"das Flugzeug" , "einfach", "gleich", "der Anruf", "hei`en", "m_de", 
-         "traurig", "endlich", "ruhig", "geben", "vielleicht", "billig", "teuer", "das Fenster", "noch" , "immer", 
-         "woher", "der Schl_ssel", "wann" , "wer", "viel" , "die Pr_fung", "gerade", "drau`en", "kennen", "die Leute"};
+         "traurig", "endlich", "ruhig", "geben", "vielleicht", "billig", "teuer", "das Fenster", "noch" , "immer"};
 DMD dmd(DISPLAYS_ACROSS,DISPLAYS_DOWN);
 
 void ScanDMD()
