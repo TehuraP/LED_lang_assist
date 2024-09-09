@@ -1,5 +1,6 @@
 # LED matrix vocabulary learning assistant
 DMD Freetronics LED Dot Matrix Display Panel 32x16 used to display random words in German along with their English translations to act as a visual learning aid to improve vocabulary.
+![Figure 1](https://github.com/AntonSaikia/LED_lang_assist/tree/main/sample_pxl.png)
 
 ## Version 0.1: Arduino Uno
 - The words are stored in the Arduino Uno are randomly selected to be displayed.
