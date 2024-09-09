@@ -44,7 +44,10 @@ void scrollText(String dispString, String dispString1)
   long timer2=start;
   boolean ret=false;
   int scroll_length = 5*max(sLength, sLength1);
+<<<<<<< HEAD:led_vocab/led_vocab.ino
 
+=======
+>>>>>>> 1b5bb5a (minor fixes):V1.0/arduino_slave_i2c/arduino_slave_i2c.ino
   int j = 0;
   while(j <= scroll_length ){
     if ( ( timer+20 ) < millis() ) {
@@ -78,3 +81,27 @@ void loop(){
     scrollText(deu[id], eng[id]);
   }
 }
+<<<<<<< HEAD:led_vocab/led_vocab.ino
+=======
+
+void receiveEvent(int howMany) {
+int i = 0;
+  while (Wire.available() && i < sizeof(receivedData) - 1) {
+    receivedData[i++] = Wire.read();  // Read byte by byte from I2C
+  }
+  receivedData[i] = '\0';  // Null-terminate the string
+
+  // Convert received data to a String object
+  String receivedString = String(receivedData);
+
+  // Split the string at the delimiter (comma in this case)
+  int delimiterIndex = receivedString.indexOf(',');
+  string1 = receivedString.substring(0, delimiterIndex);  // First string
+  string2 = receivedString.substring(delimiterIndex + 1);  // Second string
+
+  // Print the two strings to Serial
+  Serial.println("English String: " + string1);
+  Serial.println("German String: " + string2);
+
+}
+>>>>>>> 1b5bb5a (minor fixes):V1.0/arduino_slave_i2c/arduino_slave_i2c.ino
