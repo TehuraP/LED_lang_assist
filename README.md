@@ -8,8 +8,9 @@ DMD Freetronics LED Dot Matrix Display Panel 32x16 used to display random words 
 ## Version 1.0 ESP32 master + Arduino Uno slave
 - The words are stored in a MariaDB database hosted in a Apache server. (All part of XAMPP web server solution stack)
 - ESP32 fetches the words from the database and sends it to the Arduino via I2C.
-	SQL query to fetch data in a .php file
-```
+
+	SQL query to fetch words in a .php file
+```php
 $sql = "SELECT * FROM vocabulary ORDER BY RAND() LIMIT 1";
 $result = $conn->query($sql);
 
@@ -21,6 +22,5 @@ else
 {
     echo json_encode(array("message" => "No data found"));
 }
-
 ```
 - Arduino Uno recieves the words and displays it in the LED Matrix.
