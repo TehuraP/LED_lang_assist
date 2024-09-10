@@ -9,12 +9,13 @@ Example:
 - The words are stored in the Arduino Uno are randomly selected to be displayed.
 - Arduino Uno runs out of memory after a certain number of words. (In my implementation works fine till about 40 words).
 
-## Version 1.0: ESP32 master + Arduino Uno slave
-- The words are stored in a MariaDB database hosted in a Apache server. (All part of XAMPP web server solution stack)
-- ESP32 fetches the words from the database and sends it to the Arduino via I2C.
+## Version 1.0: ESP32 master + Arduino Uno slave + Locally Hosted DB
+> ### a. XAMPP based
+> The words are stored in a MariaDB database hosted in a Apache server. (All part of [XAMPP](https://www.apachefriends.org/) web server solution stack)
 
-	SQL query to fetch words in a .php file
+
 ```php
+//SQL query to fetch words in a .php API file
 $sql = "SELECT * FROM vocabulary ORDER BY RAND() LIMIT 1";
 $result = $conn->query($sql);
 
@@ -27,4 +28,9 @@ else
     echo json_encode(array("message" => "No data found"));
 }
 ```
+
+> ### b. Crow + SQLite
+> The words are stored in a SQLite database and fetched by a locally hosted [Crow](https://crowcpp.org/master/) server.
+
+- ESP32 fetches the words from the database and sends it to the Arduino via I2C.
 - Arduino Uno recieves the words and displays it in the LED Matrix.
