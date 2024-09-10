@@ -1,3 +1,13 @@
+/**
+ * @led_vocab.ino
+ *
+ * Outputs German words with English translations in a 32x16 LED Matrix
+ * @version 0.1
+ * @date 20-08-2024
+ * @author A. Saikia
+ *
+ */
+
 #include "SPI.h"      
 #include "DMD.h" 
 #include "TimerOne.h"
@@ -17,6 +27,7 @@ const char *const eng[ARRAYSIZE] = { "airport", "why",  "noon", "difficult", "fr
          "assignment" , "Earth", "any", "condition", "solution","profession", "place" , "money", "beginning" , "yellow" ,
          "to get" , "to take", "train", "short", "airplane", "simple", "the same", "call" , "to be called", "tired", 
          "sad", "finally" , "quietly", "to give" , "maybe", "cheap", "expensive", "window", "still", "always"};
+
 // German words array 
 const char *const deu[ARRAYSIZE] = { "der Flughafen", "warum",  "Mittag", "schwierig", "das Obst", "andere", "die Antwort",  "reisen", "lesen" , "lustig",
          "die Aufgabe", "die Erde", "jeder", "der Zustand", "die L^sung", "der Beruf" , "der Ort" , "das Geld" , "der Anfang" , "gelb",
@@ -28,6 +39,7 @@ void ScanDMD()
 { 
   dmd.scanDisplayBySPI();
 }
+
 void scrollText(String dispString, String dispString1) 
 {
   dmd.clearScreen( true );
@@ -56,18 +68,19 @@ void scrollText(String dispString, String dispString1)
     }
   }
 }
+
 void setup()
 {
   Serial.begin(9600);
 
-  /*period in microseconds to call ScanDMD. Anything longer than 5000 (5ms) and you can see flicker.*/
+  // Period in microseconds to call ScanDMD. Anything longer than 5000 (5ms) and you can see flicker
   Timer1.initialize( 5000 );  
 
-  /*attach the Timer1 interrupt to ScanDMD which goes to dmd.scanDisplayBySPI()*/
-  Timer1.attachInterrupt( ScanDMD );  
-  
+  // Attach the Timer1 interrupt to ScanDMD which goes to dmd.scanDisplayBySPI()
+  Timer1.attachInterrupt( ScanDMD );
+
+  // True is normal (all pixels off), false is negative (all pixels on)
   dmd.clearScreen( true );            
-  /* true is normal (all pixels off), false is negative (all pixels on) */
   
 }
 
