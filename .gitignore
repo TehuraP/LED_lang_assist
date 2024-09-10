@@ -1,2 +1,5 @@
 # .gitignore
 V1.0/esp32_master_i2c/config.h
+V1.0/V1.0b/sqlite3/sqlite3.o
+/.vscode
+*.exe
