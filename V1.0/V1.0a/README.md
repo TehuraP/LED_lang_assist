@@ -1,2 +1,2 @@
-- SQL fetch API file "get_words.php" should be stored in the /xampp/htdocs directory
-- "eng_deu_vocab.sql" can be imported using phpMyAdmin
+- SQL fetch API file `get_words.php` should be stored in the `../xampp/htdocs` directory
+- `eng_deu_vocab.sql` can be imported using phpMyAdmin
