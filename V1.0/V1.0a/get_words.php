@@ -1,4 +1,7 @@
 <?php
+// Access for frontend
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json");
 // MySQL connection details
 $servername = "localhost";
 $username = "root"; // Default XAMPP user
