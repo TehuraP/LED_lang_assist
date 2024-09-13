@@ -9,24 +9,22 @@ body {
 }
 
 #germanWord {
+    display: flex;
   font-family: "Courier New", Courier, monospace;
-  font-size: 5rem;
+  font-size: 2rem;
   color: rgb(197, 116, 68);
   font-weight: 600;
 }
-
+    
 #englishWord {
   font-family: "Courier New", Courier, monospace;
-  font-size: 5rem;
+  font-size: 2rem;
   font-weight: 600;
 }
 
-#title {
-  
+#title { 
   font-family:Arial, Helvetica, sans-serif;
-  font-size: 6rem;
 }
-
 .spacing {
   height: 3rem;
 }
@@ -35,9 +33,9 @@ body {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   cursor: pointer;
   font-weight: 900;
-  font-size: 2rem;
-  height: 5rem;
-  width: 20rem;
+  font-size: 1rem;
+  height: 4rem;
+  width: 15rem;
   background-color: rgb(51, 126, 51);
   border: 5px rgb(139, 139, 199) solid;
   border-radius: 1rem;
@@ -47,6 +45,7 @@ body {
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
+
 
 .der {
   color: blue !important;
